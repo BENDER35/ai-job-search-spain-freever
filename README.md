@@ -91,7 +91,7 @@ This fork (`BENDER35/ai-job-search-spain-freever`) is the Spanish-market adaptat
 
 | Area | What this fork adds |
 |------|---------------------|
-| **Job portals** | `tecnoempleo-search` (Tecnoempleo, Spain's IT/telecom board) and `infojobs-search` (InfoJobs, Spain's largest board, via its official free developer API), alongside the country-agnostic `linkedin-search` and `freehire-search`, which already cover Spain. The four Danish demos stay installed but disabled (`enabled: false`). |
+| **Job portals** | `tecnoempleo-search` (Tecnoempleo, Spain's IT/telecom board), `infojobs-search` (InfoJobs, Spain's largest board, via its official free developer API), and `indeed-search` (Indeed, one of the world's largest job boards covering every sector), alongside the country-agnostic `linkedin-search` and `freehire-search`, which already cover Spain. The four Danish demos stay installed but disabled (`enabled: false`). |
 | **AI runtimes** | Drive the workflow from Google Antigravity, Claude Code, Codex CLI, Gemini CLI, Qwen Code, opencode, Aider, Cline, Roo Code, Kilo Code, Continue, Goose, Crush, Cursor, Windsurf or Copilot agent mode — free options first. The canonical specs stay in `.claude/`; every other runtime reads a thin pointer file. Full matrix in [COMPATIBILITY.md](COMPATIBILITY.md). |
 | **Operating systems** | Windows 10/11, macOS (Intel and Apple Silicon) and Linux (x64 and ARM64, including Raspberry Pi 4/5). 32-bit x86 and ARMv7 have no Bun build: the TypeScript portal CLIs then run under Node.js 22+ (`node --experimental-strip-types`) or `npx tsx`. Details in [COMPATIBILITY.md](COMPATIBILITY.md) and `python3 tools/check_platform.py`. |
 | **Documentation** | Spanish mirrors of every top-level document, a technical guide in both languages ([TECHNICAL_GUIDE.md](TECHNICAL_GUIDE.md) / [GUIA_TECNICA.md](GUIA_TECNICA.md)), and [busqueda_ia_bajosrecursoseconomicos.md](busqueda_ia_bajosrecursoseconomicos.md) — a free-tier, low-budget guide to the AIs you can use for a job search (including Ollama on old hardware), with DOCX and PDF editions. |
@@ -233,6 +233,7 @@ ai-job-search/
 │   │   └── upskill/                   # /upskill skill gap analysis and learning plan
 │   └── settings.json                  # Claude Code permissions (shared, scoped)
 ├── .agents/skills/                    # Job portal CLI tools
+│   ├── indeed-search/                 # Indeed (global job board)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -358,6 +359,8 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 
 - **`tecnoempleo-search`** — Tecnoempleo (tecnoempleo.com), Spain's IT/telecom job board, parsed from its public result pages, **zero runtime dependencies**. Personal use only: keep volume low. See `.agents/skills/tecnoempleo-search/SKILL.md`.
 - **`infojobs-search`** — InfoJobs (infojobs.net), Spain's largest general board, through its **official developer API** (free registration at [developer.infojobs.net](https://developer.infojobs.net); the CLI reads `INFOJOBS_CLIENT_ID` and `INFOJOBS_CLIENT_SECRET` from the environment and fails with `MISSING_CREDENTIALS` when they are unset). See `.agents/skills/infojobs-search/SKILL.md`.
+
+- **`indeed-search`** — Indeed (indeed.com), one of the world's largest job boards covering every sector and country, useful for Spain-specific searches across all industries. Personal use only: keep volume low. See `.agents/skills/indeed-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:

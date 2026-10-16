@@ -13,8 +13,9 @@ command-line AI agent, free tiers first:
 
 - **Spanish job portals** ship as portal skills under [.agents/skills/](.agents/skills/):
   `tecnoempleo-search` (Tecnoempleo), `infojobs-search` (InfoJobs, official developer API),
-  plus the country-agnostic `linkedin-search` and `freehire-search`. `/scrape` discovers them
-  automatically. Spanish-language trigger phrases are baked into each `SKILL.md`.
+  `indeed-search` (Indeed, global job board), plus the country-agnostic `linkedin-search`
+  and `freehire-search`. `/scrape` discovers them automatically. Spanish-language trigger
+  phrases are baked into each `SKILL.md`.
 - **Runtime-agnostic**: you do not need Claude Code. Google Antigravity, Codex CLI, Gemini CLI,
   Qwen Code, opencode, Aider, Cline, Roo Code, Kilo Code, Continue, Goose, Crush, Cursor,
   Windsurf and Copilot agent mode all drive the same specs through thin pointer files
