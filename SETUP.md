@@ -526,7 +526,7 @@ Remember: the `/slash` commands are Claude Code command files (see section 1). I
 
    > Follow the spec in `.claude/skills/job-scraper/SKILL.md` and find new jobs.
 
-   This fork also ships Spanish portal skills — [`.agents/skills/tecnoempleo-search`](.agents/skills/tecnoempleo-search), [`.agents/skills/infojobs-search`](.agents/skills/infojobs-search) and [`.agents/skills/indeed-search`](.agents/skills/indeed-search) — alongside the country-agnostic [`linkedin-search`](.agents/skills/linkedin-search) and [`freehire-search`](.agents/skills/freehire-search). `/scrape` discovers every skill under `.agents/skills/` automatically, so the Spanish portals are searched with no extra configuration once their CLIs are installed (next step).
+   This fork also ships Spanish portal skills — [`.agents/skills/tecnoempleo-search`](.agents/skills/tecnoempleo-search), [`.agents/skills/infojobs-search`](.agents/skills/infojobs-search), [`.agents/skills/indeed-search`](.agents/skills/indeed-search) and [`.agents/skills/infoempleo-search`](.agents/skills/infoempleo-search) — alongside the country-agnostic [`linkedin-search`](.agents/skills/linkedin-search) and [`freehire-search`](.agents/skills/freehire-search). `/scrape` discovers every skill under `.agents/skills/` automatically, so the Spanish portals are searched with no extra configuration once their CLIs are installed (next step).
 
 3. **Apply to a posting** — ask the agent:
 

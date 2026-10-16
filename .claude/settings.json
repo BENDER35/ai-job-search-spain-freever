@@ -11,6 +11,7 @@
       "Bash(bun run .agents/skills/tecnoempleo-search/cli/src/cli.ts:*)",
       "Bash(bun run .agents/skills/infojobs-search/cli/src/cli.ts:*)",
       "Bash(bun run .agents/skills/indeed-search/cli/src/cli.ts:*)",
+      "Bash(bun run .agents/skills/infoempleo-search/cli/src/cli.ts:*)",
       "Bash(python salary_lookup.py:*)",
       "Bash(python3 salary_lookup.py:*)",
       "Bash(python tools/rank_state.py:*)",
