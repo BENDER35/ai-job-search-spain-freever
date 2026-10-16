@@ -236,6 +236,7 @@ ai-job-search/
 │   ├── indeed-search/                 # Indeed (global job board)
 │   ├── infoempleo-search/             # Infoempleo (Spanish job board)
 │   ├── ticjob-search/                  # Ticjob (Spain TIC job board)
+│   ├── disjob-search/                   # Disjob (Spain inclusive job board)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -367,6 +368,8 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`infoempleo-search`** — Infoempleo (infoempleo.com), a long-established Spanish job board covering every sector and city in Spain. Personal use only: keep volume low. See `.agents/skills/infoempleo-search/SKILL.md`.
 
 - **`ticjob-search`** — Ticjob (ticjob.es), a Spanish technology and IT job board covering software development, data, DevOps, cybersecurity and cloud roles across Spain. Personal use only: keep volume low. See `.agents/skills/ticjob-search/SKILL.md`.
+
+- **`disjob-search`** — Disjob (disjob.com), a Spanish job board focused on inclusive employers (candidates with disabilities) across all sectors and provinces, searched via a POST form with server-rendered results. Personal use only: keep volume low. See `.agents/skills/disjob-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
