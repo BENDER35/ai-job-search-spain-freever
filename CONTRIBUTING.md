@@ -2,6 +2,30 @@
 
 Thanks for considering a contribution! This repo has a deliberate, narrow philosophy, and most declined PRs are well-executed work that simply didn't know about it. Read this first; it will save you effort and tell you where your work will land best.
 
+> **Note for this fork.** This repository (`BENDER35/ai-job-search-spain-freever`) is a
+> **market fork** of [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search):
+> it exists to adapt the framework to the Spanish job market and to make it run on any
+> command-line AI agent. The rules below describe the **upstream** review policy (where
+> country-specific skills and alternative-runtime ports belong in forks, not upstream) — which is
+> exactly why this fork can carry them. When contributing here:
+>
+> - **Spanish portal skills, Spanish documentation and the compatibility/runtime guides belong in
+>   this repository.** Add a new Spanish job board with `/add-portal` (see
+>   [COMPATIBILITY.md](COMPATIBILITY.md) and the existing `.agents/skills/tecnoempleo-search` and
+>   `.agents/skills/infojobs-search` as references).
+> - **Spanish is the second documentation language.** Every top-level document has an `.es.md`
+>   mirror (`README.es.md`, `SETUP.es.md`, `SECURITY.es.md`, `CONTRIBUTING.es.md`,
+>   `CHANGELOG.es.md`, `AGENTS.es.md`, `COMPATIBILIDAD.md`, `GUIA_TECNICA.md`). If you change an
+>   English document, update its mirror in the same change.
+> - **Keep upstream's invariants**: zero-dependency portal CLIs, the search/detail contract, the
+>   personal-data gitignore boundary, `python3 tools/lint_skills.py`,
+>   `python3 tools/security_guards.py`, `python3 tools/check_framework_version.py` and
+>   `python3 -m unittest discover -s tests` all green.
+> - **Porting fixes back upstream** is welcome and appreciated — open the PR against
+>   `MadsLorentzen/ai-job-search`, not this fork.
+>
+> The Spanish translation of this file is [CONTRIBUTING.es.md](CONTRIBUTING.es.md).
+
 ## The one rule everything follows from
 
 **This repo is a universal template.** People fork it and adapt it to their own market, language, and profile. Upstream stays market-agnostic, person-agnostic, and Claude Code-native. The corollary: a contribution is judged by fit to this rule first, execution quality second. Well-built but off-policy still gets declined (kindly, with reasons).

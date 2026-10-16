@@ -119,3 +119,11 @@ company_research/*.json
 
 # Brainstorm mockups (superpowers visual companion) - never ship
 .superpowers/
+
+# Published guide editions: committed on purpose. The Spanish low-budget AI
+# guide and its English mirror are deliverables, generated from their .md
+# sources with tools/md_to_docx.py (LibreOffice headless). The blanket *.pdf
+# rule above would otherwise ignore them. Negations are allowlisted in
+# tools/security_guards.py's ALLOWED_IGNORE_NEGATIONS.
+!busqueda_ia_bajosrecursoseconomicos.pdf
+!ai_low_budget_job_search.pdf

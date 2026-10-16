@@ -2,6 +2,8 @@
 
 Step-by-step instructions for getting the AI Job Search framework running.
 
+> **Español:** esta guía también está disponible en español en [SETUP.es.md](SETUP.es.md).
+
 ## 1. Prerequisites
 
 ### Claude Code
@@ -13,6 +15,138 @@ npm install -g @anthropic-ai/claude-code
 ```
 
 You'll need an Anthropic API key or a Claude Pro/Team subscription. See the [Claude Code docs](https://docs.anthropic.com/en/docs/claude-code) for details.
+
+### Which AI/CLI agent to use (all are optional-but-pick-one)
+
+Everything the framework actually needs is plain Markdown: your profile files, the workflow specs in `.claude/commands/` and `.claude/skills/`, and the portal skills in `.agents/skills/`. None of it is tied to one vendor, so you can drive it with **any** AI agent that can read files in a folder and run shell commands in it. Install one, open this repository as the workspace, and you are done — there is no per-agent plugin to build.
+
+If you are job-hunting from Spain on a low budget, prefer a runtime with a free tier: **Google Antigravity** (GUI, free tier, no API key) or **Gemini CLI** (terminal, generous free tier). The full Antigravity walkthrough is section 9.
+
+> **A precision about the slash commands.** `/setup`, `/apply`, `/rank`, `/interview` and the rest are **Claude Code command files**: they live in `.claude/commands/<name>.md`, and only Claude Code turns them into literal `/slash` commands. (Scraping is a *skill*, not a command — its spec is `.claude/skills/job-scraper/SKILL.md`, so there is no `.claude/commands/scrape.md`.) In every other runtime, you get identical behaviour by asking the agent, in plain language, to **follow the spec in that file** — for example, "follow `.claude/commands/setup.md`". The Markdown file *is* the spec; nothing needs rewriting.
+
+#### Google Antigravity — free tier
+
+Google's agentic IDE: a GUI you drive conversationally, free with a personal Google account, no API key required. It reads the repo's instruction files when you open the folder.
+
+- **Desktop app (all OSes):** download from <https://antigravity.google/download> — macOS 12+ (Apple Silicon or Intel), Windows 10+ (64-bit), Linux (Ubuntu 20+/Debian 10+/Fedora 36+/RHEL 8+).
+- **CLI:**
+  - macOS / Linux:
+    ```bash
+    curl -fsSL https://antigravity.google/cli/install.sh | bash
+    ```
+  - Windows (CMD):
+    ```cmd
+    curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd
+    ```
+- **Cost:** free tier.
+- **How to use this repo:** open the repository folder as the workspace, then ask the agent to follow the workflow file (for example, *"read `.claude/commands/setup.md` and run it"*). Full steps in section 9.
+
+#### Claude Code — paid (Pro/Max subscription or API credits)
+
+The reference runtime, and the only one where the slash commands work verbatim. The install is above; it needs Node.js 18+, plus a Claude Pro/Max subscription or Anthropic API credits. Paid, but the most polished experience. Reads `CLAUDE.md` and everything under `.claude/`.
+
+#### OpenAI Codex CLI — free tier with a ChatGPT account, or API credits
+
+OpenAI's open-source terminal agent. Reads this repo's `AGENTS.md`.
+
+```bash
+npm i -g @openai/codex
+```
+
+Works on Windows, macOS and Linux (Node.js 18+). Free usage is included with a paid ChatGPT plan (with a smaller allowance on the free tier); you can also pay per token with an OpenAI API key. Run `codex` in the repository root and ask it to follow `.claude/commands/setup.md`.
+
+#### Gemini CLI — generous free tier
+
+Google's open-source terminal agent and the closest free equivalent to Claude Code. Reads `GEMINI.md` by default and also honours `AGENTS.md`.
+
+```bash
+npm i -g @google/gemini-cli
+```
+
+Works on all three OSes (Node.js 18+). Free with a personal Google account (at the time of writing, about 60 requests/minute and 1,000/day). Because this repo ships `AGENTS.md` and not a `GEMINI.md`, either run `/memory add AGENTS.md` inside the session or add a one-line `GEMINI.md` that says `See AGENTS.md`.
+
+#### Qwen Code CLI — free-tier friendly
+
+An open-source fork of Gemini CLI tuned for Alibaba's Qwen models, with a large free quota. Reads `QWEN.md` and `AGENTS.md`.
+
+```bash
+npm install -g @qwen-code/qwen-code@latest   # or: brew install qwen-code
+```
+
+Point it at this repo's `AGENTS.md` with `/memory add AGENTS.md`. Free tier (roughly 2,000 requests/day); bring your own API key for more.
+
+#### opencode — free (bring your own model)
+
+An open-source, terminal-native agent. The tool itself is free; you supply a model provider (many cheap and free options work, including local models). Reads `AGENTS.md`.
+
+```bash
+curl -fsSL https://opencode.ai/install | bash          # macOS / Linux
+npm install -g opencode-ai                              # any OS (Node.js)
+```
+
+On Windows you can also use `choco install opencode` or `scoop install opencode`.
+
+#### Aider — free (bring your own model)
+
+A veteran terminal pair-programmer, installed as a Python package. Free and open source; you pay only your chosen model provider. Also installable with `pipx install aider-chat` or `brew install aider`. Reads whatever you pass via `--read` (and `CONVENTIONS.md` if present).
+
+```bash
+python -m pip install aider-install
+aider-install
+```
+
+Aider does not auto-discover instruction files, so load the specs explicitly:
+
+```bash
+aider --read AGENTS.md --read .claude/commands/setup.md
+```
+
+#### Cline — free extension (bring your own model)
+
+A free, open-source autonomous-agent extension for VS Code, installed from the VS Code Marketplace ("Cline") on any OS. The extension is free; you connect a model (including local models via Ollama, or a free Gemini key). Reads `AGENTS.md` and `.clinerules/`.
+
+#### Continue — free extension (bring your own model)
+
+A free, open-source chat-and-edit assistant for VS Code and JetBrains, installed from the marketplace ("Continue"). Free extension; bring your own model or run a local one. Add `AGENTS.md` under its "Rules" configuration so it loads the repo's specs.
+
+#### Goose — free (bring your own model)
+
+Block's open-source local agent, as a CLI or a desktop app. Free; bring your own model provider. Reads `.goosehints`; copy `AGENTS.md` into `.goosehints`, or mention it in your prompt.
+
+```bash
+curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash   # macOS / Linux
+brew install block-goose-cli                                                                     # macOS / Linux
+```
+
+A Windows/macOS/Linux desktop build is also available from the Goose releases page.
+
+#### Crush — free (bring your own model)
+
+Charm's terminal agent. Free and open source; bring your own provider. Reads `CRUSH.md`, `AGENTS.md` and `.crush/`.
+
+```bash
+npm install -g @charmland/crush            # any OS (Node.js)
+brew install charmbracelet/tap/crush       # macOS / Linux
+winget install charmbracelet.crush         # Windows
+```
+
+#### Comparison at a glance
+
+| Tool | Cost | OS support | Instruction file we ship | Notes |
+|------|------|-----------|--------------------------|-------|
+| **Google Antigravity** | Free tier | Windows, macOS, Linux | `AGENTS.md` | GUI + agentic; no API key. See section 9 |
+| **Claude Code** | Paid (Pro/Max or API credits) | Windows, macOS, Linux | `CLAUDE.md` (+ `.claude/`) | Only runtime where `/slash` commands run verbatim |
+| **OpenAI Codex CLI** | Free tier (ChatGPT account) or API credits | Windows, macOS, Linux | `AGENTS.md` | Terminal agent |
+| **Gemini CLI** | Free tier (generous) | Windows, macOS, Linux | `GEMINI.md` / `AGENTS.md` | Closest free equivalent to Claude Code |
+| **Qwen Code CLI** | Free tier (generous) | Windows, macOS, Linux | `QWEN.md` / `AGENTS.md` | Gemini CLI fork |
+| **opencode** | Free (bring your own model) | Windows, macOS, Linux | `AGENTS.md` | Terminal TUI |
+| **Aider** | Free (bring your own model) | Windows, macOS, Linux | `CONVENTIONS.md` / `AGENTS.md` (via `--read`) | Python; explicit file loading |
+| **Cline** | Free extension (bring your own model) | VS Code (all OSes) | `AGENTS.md` / `.clinerules` | Editor extension |
+| **Continue** | Free extension (bring your own model) | VS Code, JetBrains | `AGENTS.md` | Editor extension |
+| **Goose** | Free (bring your own model) | Windows, macOS, Linux | `.goosehints` / `AGENTS.md` | CLI + desktop |
+| **Crush** | Free (bring your own model) | Windows, macOS, Linux | `CRUSH.md` / `AGENTS.md` | Terminal TUI |
+
+> **Cost tip for Spain:** the portal CLIs under `.agents/skills/*/cli/` are local programs, so scraping job boards costs no AI credits at all. The only thing you pay for is the agent that drives them — and the free tiers above (Antigravity, Gemini CLI) are genuinely enough. Free-tier limits change often, so check the vendor's page before relying on one.
 
 ### Python
 
@@ -152,6 +286,22 @@ The default extractor is **pypdf** (BSD, `pip install pypdf`). Poppler `pdftotex
 - **Windows:** `choco install poppler`
 
 If a command still uses `pdftotext -layout`, it must pass `-enc UTF-8` as well. If **neither** extractor is available, `/apply` skips the mechanical check with a warning and falls back to a visual keyword review — everything else works normally.
+
+### Cross-platform support and CPU architectures
+
+Everything in this repo runs on the three mainstream desktop platforms, but the install path and the CPU architecture both matter:
+
+- **Windows** — PowerShell or `cmd`. The CLI tools install with `npm i -g …` (Node) or the vendor scripts; `winget`, `choco` and `scoop` cover most of them, and MiKTeX/Poppler have their own installers (see above).
+- **macOS** — Intel and Apple Silicon. Bun, Node and every agent here ship native builds for both, and Homebrew (`/opt/homebrew` on Apple Silicon, `/usr/local` on Intel) installs them.
+- **Linux** — x64 and ARM64, including a Raspberry Pi 4/5 running a 64-bit OS.
+
+Architecture notes:
+
+- **x86_64 (amd64) and ARM64 (aarch64) are fully supported** on all three operating systems.
+- On **32-bit x86** or **ARMv7 / armhf** (for example a Raspberry Pi running a 32-bit OS, where Bun has no build), run the TypeScript portal CLIs with **Node.js 22+** using `node --experimental-strip-types`, or with `tsx`, instead of `bun`. The Python tools simply need CPython 3.10+, which works wherever Python runs.
+- If `bun --version` fails, `/scrape` is not blocked: the workflow falls back to `WebSearch` automatically (see [Troubleshooting](#troubleshooting)).
+
+The full support matrix, with per-tool notes, lives in [COMPATIBILITY.md](COMPATIBILITY.md) (Spanish mirror: [COMPATIBILIDAD.md](COMPATIBILIDAD.md)).
 
 ## 2. Fork and clone
 
@@ -316,6 +466,108 @@ Upstream keeps improving the methodology files your fork has personalized, so pl
 
      Forks also inherit a `.github/workflows/upstream-watch.yml` that runs this weekly and writes the result into a single rolling issue (it no-ops on the upstream template itself, and stays disabled on a fork until you enable Actions).
 3. **Merge normally.** `git merge upstream/master` (or `git pull`) three-way-merges upstream's edits around your personalization; because methodology edits rarely touch the lines `/setup` filled in, most updates land cleanly. A conflict in a personalized file is a *feature*, not a failure — it means upstream changed methodology in a section you customized, and the version marker plus its changelog commit tell you why. Resolve by keeping your data and adopting the methodology change around it.
+
+## 9. Google Antigravity: step-by-step setup (Windows, macOS, Linux)
+
+This section mirrors the Claude Code walkthrough in sections 2–7, using **Google Antigravity** instead. Everything else in this guide applies unchanged, and Antigravity's free tier makes this the cheapest way to drive the framework end to end.
+
+### 9.1 Install Antigravity
+
+Download the installer for your operating system from <https://antigravity.google/download> and run it:
+
+- **Windows 10+ (64-bit):** download the `.exe` installer, run it, and launch "Antigravity" from the Start menu.
+- **macOS 12 (Monterey) or later:** download the `.dmg` (Apple Silicon or Intel build), drag Antigravity to `Applications`, and launch it. The first launch may warn that the app was downloaded from the internet — allow it under *System Settings → Privacy & Security*.
+- **Linux (Ubuntu 20+, Debian 10+, Fedora 36+, RHEL 8+):** install the package your distro uses, for example `sudo apt install ./antigravity*.deb` or `sudo dnf install ./antigravity*.rpm`.
+
+There is also a **headless CLI** if you prefer the terminal:
+
+```bash
+# macOS / Linux
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+```
+
+```cmd
+:: Windows (CMD)
+curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+### 9.2 Sign in (free tier)
+
+Launch Antigravity and sign in with a **personal Google account**. The free tier is enough to run this framework; you do not need to add a payment method or an API key. Pick a model in the agent panel (Gemini models are included).
+
+### 9.3 Open this repository as the workspace
+
+Use **File → Open Folder** (or "Open Workspace") and select the folder where you cloned this repository — the same folder you ran the fork/clone commands in for section 2. Antigravity treats that folder as the project root.
+
+### 9.4 Confirm it picked up the repo's instruction files
+
+This repo ships its agent instructions at the root:
+
+- [`AGENTS.md`](AGENTS.md) — the thin pointer that tells any runtime where the canonical specs live.
+- [`CLAUDE.md`](CLAUDE.md) — your candidate profile (created by `/setup`, section 4).
+
+Ask Antigravity, in the chat panel:
+
+> Read `AGENTS.md` and `CLAUDE.md` at the root of this workspace, then summarise the workflow files they point to.
+
+If it lists `.claude/commands/*.md` and `.claude/skills/*`, discovery worked. If it does not read them on its own, you can always attach a file to a prompt explicitly.
+
+### 9.5 Run the first three workflow steps
+
+Remember: the `/slash` commands are Claude Code command files (see section 1). In Antigravity, you ask the agent to *follow the file*.
+
+1. **Profile setup** — ask the agent:
+
+   > Follow the spec in `.claude/commands/setup.md` and run the onboarding interview.
+
+   Antigravity walks you through Path A/B/C exactly as described in section 4 and writes your profile files.
+
+2. **Scrape for jobs** — the scrape workflow is a skill, not a command, and its spec is [`.claude/skills/job-scraper/SKILL.md`](.claude/skills/job-scraper/SKILL.md). Ask the agent:
+
+   > Follow the spec in `.claude/skills/job-scraper/SKILL.md` and find new jobs.
+
+   This fork also ships Spanish portal skills — [`.agents/skills/tecnoempleo-search`](.agents/skills/tecnoempleo-search) and [`.agents/skills/infojobs-search`](.agents/skills/infojobs-search) — alongside the country-agnostic [`linkedin-search`](.agents/skills/linkedin-search) and [`freehire-search`](.agents/skills/freehire-search). `/scrape` discovers every skill under `.agents/skills/` automatically, so the Spanish portals are searched with no extra configuration once their CLIs are installed (next step).
+
+3. **Apply to a posting** — ask the agent:
+
+   > Follow the spec in `.claude/commands/apply.md` with this job posting: <paste a URL or the posting text>.
+
+   The same drafter/reviewer workflow from section 6 runs.
+
+### 9.6 Enable and verify the portal CLIs
+
+The `/scrape` workflow drives the portal CLIs under `.agents/skills/*/cli/`. Install them once from the repository root (section 3):
+
+```bash
+python3 tools/install_portal_clis.py   # Windows: python tools\install_portal_clis.py
+```
+
+The CLIs are TypeScript and run on **Bun**. Check it is available:
+
+```bash
+bun --version
+```
+
+If Bun is missing, install it as shown in section 1 — `curl -fsSL https://bun.sh/install | bash` on macOS/Linux, or `winget install Oven-sh.Bun` on Windows. Verify that a single portal CLI runs before you rely on it:
+
+```bash
+bun run .agents/skills/infojobs-search/cli/src/cli.ts --help
+```
+
+If Bun has no build for your CPU (some 32-bit or ARMv7 systems), run the same entry point with Node.js 22+ (`node --experimental-strip-types`) or with `tsx` instead — see the cross-platform note at the end of section 1.
+
+### 9.7 Differences vs Claude Code
+
+| | Claude Code | Google Antigravity |
+|--|-------------|--------------------|
+| **Invocation** | Literal `/setup`, `/scrape`, `/apply` slash commands | Plain-language request to follow the matching `.claude/…` spec file |
+| **Interface** | Terminal | GUI (IDE-like), with a headless CLI available |
+| **Cost** | Pro/Max subscription or API credits | Free tier |
+| **Instruction file** | `CLAUDE.md` | `AGENTS.md` |
+| **Sub-agents / hooks** | Native (`Agent` tool, `.claude/settings.json`) | Agent panel; hooks and settings are not shared |
+| **Behaviour** | The reference implementation | Same specs, read mechanically — expect small wording/formatting differences in the output |
+
+The specs are identical, so your profile, tracker and documents stay portable between the two: nothing in this repo is locked to one runtime.
 
 ## Troubleshooting
 

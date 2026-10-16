@@ -1,10 +1,39 @@
 ---
-framework_version: 1.0.0
+framework_version: 1.1.0
 ---
 
 # Agent Guidelines: AI Job Search
 
 This workspace is structured to manage job search activities, scraper tools, CVs, cover letters, and interview preparation.
+
+## This repository is the Spain adaptation
+
+This fork (`BENDER35/ai-job-search-spain-freever`) targets the Spanish job market and any
+command-line AI agent, free tiers first:
+
+- **Spanish job portals** ship as portal skills under [.agents/skills/](.agents/skills/):
+  `tecnoempleo-search` (Tecnoempleo), `infojobs-search` (InfoJobs, official developer API),
+  plus the country-agnostic `linkedin-search` and `freehire-search`. `/scrape` discovers them
+  automatically. Spanish-language trigger phrases are baked into each `SKILL.md`.
+- **Runtime-agnostic**: you do not need Claude Code. Google Antigravity, Codex CLI, Gemini CLI,
+  Qwen Code, opencode, Aider, Cline, Roo Code, Kilo Code, Continue, Goose, Crush, Cursor,
+  Windsurf and Copilot agent mode all drive the same specs through thin pointer files
+  (`GEMINI.md`, `QWEN.md`, `CONVENTIONS.md`, `.cursorrules`, `.windsurfrules`, `.clinerules`,
+  `.goosehints`, `.github/copilot-instructions.md`). See [COMPATIBILITY.md](COMPATIBILITY.md) /
+  [COMPATIBILIDAD.md](COMPATIBILIDAD.md).
+- **Step-by-step setup per runtime and per OS**: [SETUP.md](SETUP.md) / [SETUP.es.md](SETUP.es.md).
+- **How the framework works internally**: [TECHNICAL_GUIDE.md](TECHNICAL_GUIDE.md) /
+  [GUIA_TECNICA.md](GUIA_TECNICA.md).
+- **Free-tier / low-budget AI guide** (including Ollama on old hardware):
+  [busqueda_ia_bajosrecursoseconomicos.md](busqueda_ia_bajosrecursoseconomicos.md) /
+  [ai_low_budget_job_search.md](ai_low_budget_job_search.md).
+- Spanish mirrors of the framework docs: [README.es.md](README.es.md),
+  [CONTRIBUTING.es.md](CONTRIBUTING.es.md), [SECURITY.es.md](SECURITY.es.md),
+  [CHANGELOG.es.md](CHANGELOG.es.md).
+
+If you are an agent reading this file: prefer the Spanish portal skills for Spanish-market
+searches, keep automated request volume low (the portal skills are personal-use only), and never
+duplicate the specs below — they are the single source of truth.
 
 ## Thin-Pointer Design (Single Source of Truth)
 

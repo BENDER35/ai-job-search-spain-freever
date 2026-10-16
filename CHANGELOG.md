@@ -11,7 +11,7 @@ prefer updating to a tagged release over pulling raw `master` (see
 files a release touched; `python3 tools/check_upstream_updates.py` lists them with
 per-file diff commands.
 
-## [Unreleased]
+## [1.8.0-es] - 2026-10-16
 
 ### Added
 
@@ -26,6 +26,21 @@ per-file diff commands.
   with a message naming the reason - any manifest that declares a lifecycle script or
   `trustedDependencies`, the same set `security_guards.py` forbids in-tree, so a borrowed portal
   carrying one is read before it runs. `--dry-run` lists what it would install.
+
+- **Spain adaptation (`BENDER35/ai-job-search-spain-freever`)**: this fork now targets the Spanish
+  job market and every command-line AI agent, free tiers first. It adds the Spanish portals
+  `tecnoempleo-search` and `infojobs-search` (next to the country-agnostic `linkedin-search` and
+  `freehire-search`, which already cover Spain), Spanish mirrors of every top-level document
+  (`README.es.md`, `SETUP.es.md`, `SECURITY.es.md`, `CONTRIBUTING.es.md`, `CHANGELOG.es.md`,
+  `AGENTS.es.md`, `COMPATIBILIDAD.md`, `GUIA_TECNICA.md`), the runtime/OS/architecture matrix
+  (`COMPATIBILITY.md`/`COMPATIBILIDAD.md`), thin pointer files for other runtimes (`GEMINI.md`,
+  `QWEN.md`, `CONVENTIONS.md`, `.cursorrules`, `.cursor/rules/ai-job-search.mdc`, `.windsurfrules`,
+  `.clinerules`, `.goosehints`, `.github/copilot-instructions.md`), a bilingual technical guide
+  (`TECHNICAL_GUIDE.md`/`GUIA_TECNICA.md`), `tools/check_platform.py`, and the low-budget AI guide
+  `busqueda_ia_bajosrecursoseconomicos.md` (+ its English mirror `ai_low_budget_job_search.md` and
+  their `.docx`/`.pdf` editions, produced with the new `tools/md_to_docx.py`). `SETUP.md` gains a
+  runtime selection section and a step-by-step Google Antigravity walkthrough for Windows, macOS
+  and Linux.
 
 ### Changed
 

@@ -1,0 +1,23 @@
+<!-- Thin pointer (Goose): this file exists only so the runtime discovers the repo's
+     canonical specs. Do not copy any spec into it. See COMPATIBILITY.md. -->
+# AI Job Search - hints for Goose
+
+This workspace is the Spanish adaptation of the **AI Job Search** framework. Its
+canonical specifications live in the files below and must not be duplicated in
+this file - point at them, so upstream improvements keep reaching the fork.
+Always start by reading these, in this order:
+
+1. `AGENTS.md` - the cross-runtime entry point and the thin-pointer design.
+2. `CLAUDE.md` - the candidate profile and the workflow rules.
+3. `.claude/` - the canonical workflow specs: `commands/` (setup, scrape, rank,
+   apply, outcome, interview, upskill, ...) and `skills/`.
+4. `.agents/skills/` - the job-portal search CLIs (portable Agent Skills, one
+   `SKILL.md` per portal).
+
+Goose reads this `.goosehints` file automatically, and also honours `AGENTS.md`.
+When the user asks for a workflow, open the matching `.claude/commands/<name>.md`
+and follow it; to load a skill, read `.claude/skills/<name>/SKILL.md`. Slash
+commands (`/scrape`) are Claude Code artifacts - in Goose you name the spec file.
+
+Never restate a spec from `.claude/` here; point at it instead. Platform and
+runtime notes: `COMPATIBILITY.md`.

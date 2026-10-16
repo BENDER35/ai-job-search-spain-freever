@@ -12,7 +12,27 @@
 
 [![CI](https://github.com/MadsLorentzen/ai-job-search/actions/workflows/ci.yml/badge.svg)](https://github.com/MadsLorentzen/ai-job-search/actions/workflows/ci.yml)
 
-An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.
+**Idioma / Language:** [Español](README.es.md) · English
+
+> 🇪🇸 **This is the Spain adaptation** — a fork of
+> [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) that adds
+> Spanish job-portal search skills, Spanish-language documentation, a
+> runtime/OS/architecture compatibility matrix, and a zero-budget AI guide. Upstream remains
+> the reference implementation; see [Adapting this to Spain](#adapting-this-to-spain) below.
+>
+> Spanish mirrors: [README.es.md](README.es.md) · [SETUP.es.md](SETUP.es.md) ·
+> [CONTRIBUTING.es.md](CONTRIBUTING.es.md) · [SECURITY.es.md](SECURITY.es.md) ·
+> [CHANGELOG.es.md](CHANGELOG.es.md) · [AGENTS.es.md](AGENTS.es.md) ·
+> [COMPATIBILIDAD.md](COMPATIBILIDAD.md) · [GUIA_TECNICA.md](GUIA_TECNICA.md) ·
+> [busqueda_ia_bajosrecursoseconomicos.md](busqueda_ia_bajosrecursoseconomicos.md)
+
+An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code) —
+and on **any other command-line AI agent** you prefer. Fork it, fill in your profile, and let
+your agent evaluate job postings, tailor your CV, write cover letters, and prepare you for
+interviews. The workflow runs on [Google Antigravity](https://antigravity.google/), Codex CLI,
+Gemini CLI, Qwen Code, opencode, Aider, Cline, Continue, Goose and Crush too — free options
+first; see [COMPATIBILITY.md](COMPATIBILITY.md) and [SETUP.md](SETUP.md) for the
+step-by-step instructions on Windows, macOS and Linux.
 
 > Note: This is an independent open-source project and is not affiliated with, endorsed by, sponsored by, or maintained by Anthropic. Anthropic and Claude Code are referenced only to describe the toolchain this workflow uses.
 >
@@ -39,7 +59,13 @@ Sixty-nine tailored applications, twenty first interviews, and one signed contra
 
 ## What this is
 
-A structured workflow that turns Claude Code into a full-stack job application assistant. The core workflow (self-profiling, fit evaluation, and the drafter-reviewer application pipeline) is **language- and country-agnostic**. The job portal search skills are built for the Danish market (Jobindex, Jobnet, Akademikernes Jobbank, etc.), but the pattern is designed to be swapped for your local job boards.
+A structured workflow that turns your command-line AI agent into a full-stack job application
+assistant. The core workflow (self-profiling, fit evaluation, and the drafter-reviewer
+application pipeline) is **language- and country-agnostic**. This fork ships the Spanish
+market's job portals (Tecnoempleo, InfoJobs) alongside the country-agnostic
+`linkedin-search` and `freehire-search` tools, and the Danish demos stay installed but
+disabled — the pattern is designed to be swapped for your local job boards with
+[`/add-portal`](#job-search-tools).
 
 ```
 /setup          /scrape              /apply <url>
@@ -59,9 +85,22 @@ files ready    with fit ratings     (LaTeX, tailored)
 
 The framework encodes career guidance best practices, including structured evaluation criteria, forward-looking cover letter framing, and optional salary benchmarking.
 
+## Adapting this to Spain
+
+This fork (`BENDER35/ai-job-search-spain-freever`) is the Spanish-market adaptation. Compared to upstream:
+
+| Area | What this fork adds |
+|------|---------------------|
+| **Job portals** | `tecnoempleo-search` (Tecnoempleo, Spain's IT/telecom board) and `infojobs-search` (InfoJobs, Spain's largest board, via its official free developer API), alongside the country-agnostic `linkedin-search` and `freehire-search`, which already cover Spain. The four Danish demos stay installed but disabled (`enabled: false`). |
+| **AI runtimes** | Drive the workflow from Google Antigravity, Claude Code, Codex CLI, Gemini CLI, Qwen Code, opencode, Aider, Cline, Roo Code, Kilo Code, Continue, Goose, Crush, Cursor, Windsurf or Copilot agent mode — free options first. The canonical specs stay in `.claude/`; every other runtime reads a thin pointer file. Full matrix in [COMPATIBILITY.md](COMPATIBILITY.md). |
+| **Operating systems** | Windows 10/11, macOS (Intel and Apple Silicon) and Linux (x64 and ARM64, including Raspberry Pi 4/5). 32-bit x86 and ARMv7 have no Bun build: the TypeScript portal CLIs then run under Node.js 22+ (`node --experimental-strip-types`) or `npx tsx`. Details in [COMPATIBILITY.md](COMPATIBILITY.md) and `python3 tools/check_platform.py`. |
+| **Documentation** | Spanish mirrors of every top-level document, a technical guide in both languages ([TECHNICAL_GUIDE.md](TECHNICAL_GUIDE.md) / [GUIA_TECNICA.md](GUIA_TECNICA.md)), and [busqueda_ia_bajosrecursoseconomicos.md](busqueda_ia_bajosrecursoseconomicos.md) — a free-tier, low-budget guide to the AIs you can use for a job search (including Ollama on old hardware), with DOCX and PDF editions. |
+
+Everything else — the `/setup` → `/scrape` → `/rank` → `/apply` → `/interview` → `/outcome` lifecycle, the templates, the salary tooling — works exactly as upstream documents it.
+
 ## Prerequisites
 
-- [Claude Code](https://claude.com/claude-code) (CLI). Claude Code has no free tier: you need a Claude Pro/Max/Team subscription or Anthropic API credits (pay-per-token, usually cheaper for occasional use). Using a different agent tool (Codex, Antigravity, Gemini CLI)? Start at [`AGENTS.md`](AGENTS.md) - the portal search skills work there out of the box, and [community forks](https://github.com/MadsLorentzen/ai-job-search/discussions/78) adapt the full workflow.
+- [Claude Code](https://claude.com/claude-code) (CLI). Claude Code has no free tier: you need a Claude Pro/Max/Team subscription or Anthropic API credits (pay-per-token, usually cheaper for occasional use). **This fork does not require Claude Code** — any command-line agent can drive the same specs (Google Antigravity, Codex CLI, Gemini CLI, Qwen Code, opencode, Aider, Cline, Continue, Goose, Crush, ...), and the free-tier options are documented in [SETUP.md](SETUP.md#which-aicli-agent-to-use-all-are-optional-but-pick-one) and [COMPATIBILITY.md](COMPATIBILITY.md). The portal search skills work in every one of them out of the box.
 - Python 3.10+
 - [Bun](https://bun.sh) (for job search CLI tools)
 - LaTeX distribution with `lualatex` and `xelatex`: [TeX Live](https://tug.org/texlive/), [MacTeX](https://tug.org/mactex/), [TinyTeX](https://yihui.org/tinytex/), or [MiKTeX](https://miktex.org/). The CV compiles with `lualatex` (pdflatex often fails on modern MiKTeX installs with `fontawesome5` font-expansion errors); the cover letter compiles with `xelatex` because `cover.cls` requires `fontspec`. If using a minimal TeX install such as TinyTeX or BasicTeX, install the extra packages listed in [SETUP.md](SETUP.md#minimal-tex-install-tinytexbasictex).
@@ -104,6 +143,19 @@ claude
 # Then inside Claude Code:
 /setup
 ```
+
+Driving this with another agent instead (Antigravity, Codex CLI, Gemini CLI, Qwen Code,
+opencode, Aider, Cline, Continue, Goose, Crush)? Open the repository as the agent's workspace
+and ask it, in plain language, to execute the matching spec file — for onboarding:
+
+```
+Read .claude/commands/setup.md and follow it for this repository.
+```
+
+Every workflow in this README (`/scrape`, `/rank`, `/apply`, `/interview`, `/outcome`, …) has
+the same shape: `.claude/commands/<name>.md` is the spec, and the skills it invokes live in
+`.claude/skills/` and `.agents/skills/`. Step-by-step instructions per runtime and per OS are in
+[SETUP.md](SETUP.md); the full runtime matrix is in [COMPATIBILITY.md](COMPATIBILITY.md).
 
 `/setup` offers three paths: read your `documents/` folder if you have one populated (CV PDF, LinkedIn export, diplomas, reference letters, past applications), import a single CV pasted in chat, or walk through an interview. It auto-detects what you have and asks. Documents-folder mode is idempotent and safe to re-run as you add more material; see `documents/README.md` for the layout.
 
@@ -181,6 +233,8 @@ ai-job-search/
 │   │   └── upskill/                   # /upskill skill gap analysis and learning plan
 │   └── settings.json                  # Claude Code permissions (shared, scoped)
 ├── .agents/skills/                    # Job portal CLI tools
+│   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
+│   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
 │   ├── jobdanmark-search/             # Jobdanmark.dk (Denmark)
 │   ├── jobindex-search/               # Jobindex.dk (Denmark)
@@ -220,7 +274,15 @@ ai-job-search/
 ├── gmail_sync/                        # /gmail-sync state (processed message IDs, last sync date)
 ├── upskill/                           # /upskill report output (markdown reports per run)
 ├── job_search_tracker.csv             # Application tracking spreadsheet
-└── SETUP.md                           # Detailed setup guide
+├── SETUP.md                           # Detailed setup guide
+├── SETUP.es.md                        # Spanish setup guide
+├── COMPATIBILITY.md                   # Runtime / OS / architecture compatibility matrix
+├── COMPATIBILIDAD.md                  # Spanish compatibility matrix
+├── TECHNICAL_GUIDE.md                 # How the framework works, end to end
+├── GUIA_TECNICA.md                    # Spanish technical guide
+├── busqueda_ia_bajosrecursoseconomicos.md  # Free/low-budget AI job-search guide (ES, + .pdf/.docx)
+├── ai_low_budget_job_search.md        # Same guide in English (+ .pdf/.docx)
+└── README.es.md                       # Spanish README (plus .es mirrors of SECURITY/CONTRIBUTING/CHANGELOG/AGENTS)
 ```
 
 ## How `/apply` works
@@ -292,7 +354,13 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 
 ### Job search tools
 
-The four Danish CLI tools in `.agents/skills/` (Jobbank, Jobdanmark, Jobindex, Jobnet) demonstrate the pattern for building a job-portal integration for a specific market. If you're in a different country, run:
+**Spanish portals ship in this fork.** `.agents/skills/` includes:
+
+- **`tecnoempleo-search`** — Tecnoempleo (tecnoempleo.com), Spain's IT/telecom job board, parsed from its public result pages, **zero runtime dependencies**. Personal use only: keep volume low. See `.agents/skills/tecnoempleo-search/SKILL.md`.
+- **`infojobs-search`** — InfoJobs (infojobs.net), Spain's largest general board, through its **official developer API** (free registration at [developer.infojobs.net](https://developer.infojobs.net); the CLI reads `INFOJOBS_CLIENT_ID` and `INFOJOBS_CLIENT_SECRET` from the environment and fails with `MISSING_CREDENTIALS` when they are unset). See `.agents/skills/infojobs-search/SKILL.md`.
+- **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
+
+The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
 
 ```
 /add-portal
@@ -302,7 +370,7 @@ Give it your local job board's URL. The command investigates the portal (search-
 
 Maintaining a fork adapted to your market or language? Add it to the [Community forks & adaptations](https://github.com/MadsLorentzen/ai-job-search/discussions/78) thread so others can find it.
 
-For **country-agnostic** starting points outside Denmark, the repo ships two portal skills alongside the Danish demos:
+For **country-agnostic** starting points that work in Spain and elsewhere, the repo ships two portal skills alongside the Danish demos:
 
 - **`linkedin-search`** — built on LinkedIn's public, unauthenticated `jobs-guest` endpoints. Field-agnostic, **zero runtime dependencies** (runs with just `bun`), and takes the search location as an explicit flag, so it works for any market out of the box (`-l "Berlin, Germany"`, `-l "Mumbai, Maharashtra, India"`, `-l "Remote"`, …). Intended for **personal use only** — automated access is against LinkedIn's Terms of Service, so keep volume low. See `.agents/skills/linkedin-search/SKILL.md`.
 - **`freehire-search`** — queries the [freehire.me](https://freehire.me) aggregator's public REST API (JSON, no API key). Tech-focused (software, data, engineering, DevOps, remote), multi-market via facet flags (`--region`, `--country`, `--remote`), and **zero runtime dependencies**. Unlike the HTML-scraping Danish portals, results come back structured (skills, seniority, category). The backend is MIT-licensed and [self-hostable](https://github.com/strelov1/freehire) — point `FREEHIRE_API_URL` at your own instance if you prefer. See `.agents/skills/freehire-search/SKILL.md`.
@@ -364,14 +432,32 @@ The framework supports two distinct modes of job searching:
 
 To get the most from this, invest time during `/setup` in describing not just your experience, but what energized you, what drained you, and what you'd want more of. This context directly shapes how the system evaluates fit and which roles it surfaces during `/scrape`.
 
+## Running this with little or no money
+
+Every AI runtime in this fork's compatibility matrix has a free tier, and the workflow itself costs
+nothing to run — the only paid ingredient upstream ever assumed was Claude Code. Start with:
+
+- **[busqueda_ia_bajosrecursoseconomicos.md](busqueda_ia_bajosrecursoseconomicos.md)** (Spanish) /
+  **[ai_low_budget_job_search.md](ai_low_budget_job_search.md)** (English) — how to register for the
+  free tier of every relevant AI, how to install the free command-line agents on Windows, Linux and
+  macOS, how to run a local model with **Ollama** (including on machines below 8th-gen — and below
+  5th-gen — Intel, with the model/RAM table), Ollama's alternatives (LM Studio, Jan, GPT4All,
+  llamafile, LocalAI, KoboldCpp, …), Google Antigravity and its alternatives, and a realistic 30-day
+  plan at €0. Also available as `.docx` and `.pdf` (generated with `python3 tools/md_to_docx.py`).
+- **[COMPATIBILITY.md](COMPATIBILITY.md)** — which agent to drive it with, on which OS and CPU
+  architecture, and which ones are genuinely free.
+- **`python3 tools/check_platform.py`** — prints what your machine can run (Python tools, Bun CLIs,
+  Node fallback, LaTeX) and what to install next.
+
 ## Contributing
 
-Thinking about a PR? Read [CONTRIBUTING.md](CONTRIBUTING.md) first - it explains what gets merged, what lives in forks, and why.
+Thinking about a PR? Read [CONTRIBUTING.md](CONTRIBUTING.md) first - it explains what gets merged, what lives in forks, and why. The Spanish version is [CONTRIBUTING.es.md](CONTRIBUTING.es.md). Note that this repository is a **market fork**: Spanish portal skills, Spanish documentation and the compatibility guides belong here, while upstream stays a country-agnostic template.
 
 ## Acknowledgements
 
 - [Mikkel Krogholm](https://github.com/mikkelkrogsholm) ([skills repo](https://github.com/mikkelkrogsholm/skills)) for the job search CLI skills
 - Built with [Claude Code](https://claude.com/claude-code) by [Anthropic](https://anthropic.com)
+- Spain adaptation maintained in [BENDER35/ai-job-search-spain-freever](https://github.com/BENDER35/ai-job-search-spain-freever)
 
 ## License
 
