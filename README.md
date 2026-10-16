@@ -240,6 +240,8 @@ ai-job-search/
 │   ├── domestika-search/                 # Domestika (Spain creative job board)
 │   ├── eures-search/                     # EURES (EU-wide REST API incl. Spain)
 │   ├── itjobs-search/                    # ITJobs (Spain IT job board)
+│   ├── jobfluent-search/                 # JobFluent (Spain tech job board)
+│   ├── jobtoday-search/                  # JobToday (Spain high-volume job board)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -379,6 +381,10 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`eures-search`** — EURES (europa.eu/eures), the European Employment Services portal with a documented REST API (POST search, GET detail), covering EU-wide including Spanish public-sector and cross-border roles. Personal use only: keep volume low. See `.agents/skills/eures-search/SKILL.md`.
 
 - **`itjobs-search`** — ITJobs (itjobs.es), a Spanish technology job board covering software, data, DevOps, cybersecurity, cloud and SAP roles across Spain; parsed from server-rendered HTML search results. Personal use only: keep volume low. See `.agents/skills/itjobs-search/SKILL.md`.
+
+- **`jobfluent-search`** — JobFluent (jobfluent.com), a Spanish technology job board with a public JSON API (`/es/empleos.json`), covering software, data, DevOps, product and tech roles across Spain. Personal use only: keep volume low. See `.agents/skills/jobfluent-search/SKILL.md`.
+
+- **`jobtoday-search`** — JobToday (jobtoday.com), a high-volume Spanish job board covering hospitality, retail, logistics, admin and many other sectors; parsed from server-rendered Next.js pages with embedded JSON. Personal use only: keep volume low. See `.agents/skills/jobtoday-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:

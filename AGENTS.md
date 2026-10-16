@@ -14,7 +14,7 @@ command-line AI agent, free tiers first:
 - **Spanish job portals** ship as portal skills under [.agents/skills/](.agents/skills/):
   `tecnoempleo-search` (Tecnoempleo), `infojobs-search` (InfoJobs, official developer API),
   `indeed-search` (Indeed, global job board), `infoempleo-search` (Infoempleo, Spanish
-  job board), `ticjob-search` (Ticjob, Spanish TIC board), `disjob-search` (Disjob, Spanish inclusive employment board), `domestika-search` (Domestika, Spanish creative job board), `eures-search` (EURES, EU-wide REST API including Spain), `itjobs-search` (ITJobs, Spanish IT board), plus the country-agnostic `linkedin-search` and `freehire-search`.
+  job board), `ticjob-search` (Ticjob, Spanish TIC board), `disjob-search` (Disjob, Spanish inclusive employment board), `domestika-search` (Domestika, Spanish creative job board), `eures-search` (EURES, EU-wide REST API including Spain), `itjobs-search` (ITJobs, Spanish IT board), `jobfluent-search` (JobFluent, Spanish tech board), `jobtoday-search` (JobToday, high-volume Spanish board), plus the country-agnostic `linkedin-search` and `freehire-search`.
   `/scrape` discovers them automatically. Spanish-language trigger phrases are baked into
   each `SKILL.md`.
 - **Runtime-agnostic**: you do not need Claude Code. Google Antigravity, Codex CLI, Gemini CLI,
