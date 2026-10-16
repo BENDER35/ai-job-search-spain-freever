@@ -238,6 +238,7 @@ ai-job-search/
 │   ├── ticjob-search/                  # Ticjob (Spain TIC job board)
 │   ├── disjob-search/                   # Disjob (Spain inclusive job board)
 │   ├── domestika-search/                 # Domestika (Spain creative job board)
+│   ├── eures-search/                     # EURES (EU-wide REST API incl. Spain)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -373,6 +374,8 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`disjob-search`** — Disjob (disjob.com), a Spanish job board focused on inclusive employers (candidates with disabilities) across all sectors and provinces, searched via a POST form with server-rendered results. Personal use only: keep volume low. See `.agents/skills/disjob-search/SKILL.md`.
 
 - **`domestika-search`** — Domestika (domestika.org), a Spanish creative job board with public Atom feed (`/es/jobs.atom`), covering design, motion, UX, illustration and creative roles; parsed server-side from the feed plus HTML detail pages. Personal use only: keep volume low.
+
+- **`eures-search`** — EURES (europa.eu/eures), the European Employment Services portal with a documented REST API (POST search, GET detail), covering EU-wide including Spanish public-sector and cross-border roles. Personal use only: keep volume low. See `.agents/skills/eures-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
