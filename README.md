@@ -243,6 +243,7 @@ ai-job-search/
 │   ├── jobfluent-search/                 # JobFluent (Spain tech job board)
 │   ├── jobtoday-search/                  # JobToday (Spain high-volume job board)
 │   ├── trabajos-search/                  # Trabajos.com (Spain general job board)
+│   ├── serveo-search/                    # Serveo (company careers portal)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -388,6 +389,8 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`jobtoday-search`** — JobToday (jobtoday.com), a high-volume Spanish job board covering hospitality, retail, logistics, admin and many other sectors; parsed from server-rendered Next.js pages with embedded JSON. Personal use only: keep volume low. See `.agents/skills/jobtoday-search/SKILL.md`.
 
 - **`trabajos-search`** — Trabajos.com (trabajos.com), one of Spain's longest-running general job boards covering every sector across all provinces, searchable by keyword and province/city; parsed from server-rendered HTML. Personal use only: keep volume low. See `.agents/skills/trabajos-search/SKILL.md`.
+
+- **`serveo-search`** — Serveo (jobs.serveo.com), the official careers portal of Serveo, a large Spanish infrastructure, facility management and services company, covering maintenance, energy, transport, healthcare, engineering and administration roles across Spain; parsed from a server-rendered SAP SuccessFactors career site. Personal use only: keep volume low. See `.agents/skills/serveo-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
