@@ -348,156 +348,206 @@ profesionalidad previo (si el curso requiere nivel previo), etc.
 > el portal oficial de tu CCAA. La **demanda de empleo (DARDE)** se tramita con
 > el SEPE en todas las CCAA, pero la **intermediación, orientación y formación**
 > dependen del servicio autonómico.
+>
+> **Cita previa**: en la mayoría de CCAA la cita previa para atención
+> presencial es **imprescindible** (no se atiende sin cita). La renovación de
+> la demanda y muchos trámites se pueden hacer **telemáticamente sin cita**.
+> Se indica en cada apartado si es opcional o imprescindible.
+
+### Procedimiento general (común a todas las CCAA)
+
+**Demanda de empleo — alta:**
+1. Reúne documentación: DNI/NIE, número de Seguridad Social, datos
+   bancarios (IBAN), currículum, titulación, datos de domicilio.
+2. Solicita cita previa en la oficina de empleo correspondiente a tu domicilio
+   (o hazlo telemáticamente con certificado digital / Cl@ve / DNIe).
+3. Acude a la oficina en la fecha/hora asignada (o completa el trámite online).
+4. Recibe el **DARDE** con la fecha de próxima renovación.
+5. Activa tu cuenta en el portal de empleo autonómico y en Empléate.
+
+**Demanda — modificación:**
+1. Accede telemáticamente (portal autonómico o Sede Electrónica del SEPE) o
+   acude a la oficina con cita previa.
+2. Actualiza los datos que han cambiado (domicilio, teléfono, titulación,
+   experiencia, disponibilidad).
+3. Guarda el justificante.
+
+**Demanda — renovación:**
+1. Renueva antes de la fecha indicada en el DARDE (generalmente cada 3 meses).
+2. Telemáticamente (portal autonómico o SEPE) o en la oficina con cita previa.
+3. El incumplimiento puede suponer baja de la demanda y suspensión de la
+   prestación.
+
+**Ofertas de empleo — inscribirse:**
+1. Busca ofertas en el portal autonómico (filtra por sector, ocupación,
+   municipio, contrato, jornada).
+2. Lee los requisitos y el plazo de presentación.
+3. Pulsa "Inscribirme"/"Apuntarme"/"Solicitar" (requiere perfil completo y
+   demanda activa).
+4. Guarda el justificante/código de inscripción.
+5. Sigue el estado en el portal.
+
+**Formación — inscribirse en un curso:**
+1. Consulta la oferta formativa (portal autonómico, oficina o SEPE).
+2. Verifica los requisitos (demanda activa, nivel de estudios, experiencia).
+3. Inscríbete online (portal) o en la oficina.
+4. Espera la selección (automática/baremo/orden de inscripción).
+5. Acepta la plaza en el plazo indicado.
+6. Asiste y supera la evaluación para obtener el certificado.
 
 ### 11.1 Andalucía — SAE (Servicio Andaluz de Empleo)
 
 - **Portal**: `empleo.juntadeandalucia.es` (SAE).
-- **Demanda**: alta/modificación/renovación a través del SEPE (oficina o Sede
-  Electrónica); el SAE ofrece intermediación y orientación en sus centros.
-- **Ofertas**: búsqueda e inscripción en el portal SAE; muchas ofertas
-  requieren demanda activa y perfil completo.
+- **Cita previa**: **imprescindible** para atención presencial en centros SAE;
+  renovación de la demanda y muchos trámites se pueden hacer telemáticamente
+  sin cita.
+- **Demanda**: alta/modificación/renovación con el SEPE (oficina o Sede
+  Electrónica); el SAE ofrece intermediación y orientación.
+- **Empleo (ofertas)**: búsqueda e inscripción en el portal SAE; requiere
+  demanda activa y perfil completo. Pasos: buscar → leer requisitos →
+  inscribirse → guardar justificante → seguimiento.
 - **Formación**: cursos del SAE (presenciales/online), certificados de
-  profesionalidad; inscripción en el portal con selección por baremo/orden de
+  profesionalidad; inscripción en el portal; selección por baremo/orden de
   inscripción; preasignación automática si cumples requisitos.
-- **Cita previa**: centros SAE / oficinas SEPE.
 
 ### 11.2 Aragón — INAEM (Instituto Aragonés de Empleo)
 
 - **Portal**: `inaem.aragon.es`.
-- **Demanda**: SEPE (alta/renovación); INAEM gestiona intermediación y
-  orientación.
-- **Ofertas**: portal INAEM; inscripción con perfil y demanda activa.
+- **Cita previa**: **imprescindible** para atención presencial.
+- **Demanda**: SEPE.
+- **Empleo**: portal INAEM; inscripción con perfil y demanda activa.
 - **Formación**: cursos INAEM; inscripción telemática/presencial; selección
   por requisitos y plazas.
-- **Cita previa**: oficinas INAEM.
 
 ### 11.3 Asturias — SEPEPA
 
 - **Portal**: `empleo.asturias.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal autonómico; inscripción con demanda activa.
+- **Empleo**: portal autonómico; inscripción con demanda activa.
 - **Formación**: cursos del Principado; inscripción online; selección por
   baremo.
-- **Cita previa**: oficinas de empleo.
 
 ### 11.4 Baleares — SOIB
 
 - **Portal**: `soib.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: SOIB; inscripción con perfil y demanda.
+- **Empleo**: SOIB; inscripción con perfil y demanda.
 - **Formación**: cursos SOIB; inscripción online; preasignación automática.
-- **Cita previa**: oficinas SOIB.
 
 ### 11.5 Canarias — SCE (Servicio Canario de Empleo)
 
 - **Portal**: `sce.gobiernodecanarias.org`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal SCE.
+- **Empleo**: portal SCE.
 - **Formación**: cursos SCE; inscripción online/presencial.
-- **Cita previa**: oficinas SCE.
 
 ### 11.6 Cantabria — EMCAN
 
 - **Portal**: `empleocantabria.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal EMCAN.
+- **Empleo**: portal EMCAN.
 - **Formación**: cursos EMCAN.
-- **Cita previa**: oficinas EMCAN.
 
 ### 11.7 Castilla-La Mancha — SEPECAM
 
 - **Portal**: `empleo.jccm.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal SEPECAM.
+- **Empleo**: portal SEPECAM.
 - **Formación**: cursos SEPECAM; inscripción online.
-- **Cita previa**: oficinas SEPECAM.
 
 ### 11.8 Castilla y León — ECYL
 
 - **Portal**: `empleo.jcyl.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal ECYL; inscripción con demanda activa.
+- **Empleo**: portal ECYL; inscripción con demanda activa.
 - **Formación**: cursos ECYL; inscripción online; selección por requisitos.
-- **Cita previa**: oficinas ECYL.
 
 ### 11.9 Cataluña — SOC (Servei d'Ocupació de Catalunya)
 
 - **Portal**: `soc.gencat.cat`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE (oficina o telemática).
-- **Ofertas**: portal SOC; inscripción con perfil y demanda.
+- **Empleo**: portal SOC; inscripción con perfil y demanda.
 - **Formación**: cursos SOC; inscripción online; selección por baremo/orden.
-- **Cita previa**: oficinas SOC.
 
 ### 11.10 Extremadura — SEXPE
 
 - **Portal**: `extremaduratrabaja.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal SEXPE.
+- **Empleo**: portal SEXPE.
 - **Formación**: cursos SEXPE.
-- **Cita previa**: oficinas SEXPE.
 
 ### 11.11 Galicia — Xunta (Consellería de Promoción do Emprego)
 
 - **Portal**: `emprego.xunta.gal`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal autonómico; inscripción con demanda.
+- **Empleo**: portal autonómico; inscripción con demanda.
 - **Formación**: cursos autonómicos; inscripción online.
-- **Cita previa**: oficinas de empleo.
 
 ### 11.12 La Rioja
 
 - **Portal**: `empleo.larioja.org`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal autonómico.
+- **Empleo**: portal autonómico.
 - **Formación**: cursos autonómicos.
-- **Cita previa**: oficinas SEPE.
 
 ### 11.13 Madrid — Servicio Regional de Empleo
 
 - **Portal**: `empleo.madrid.org` / Madrid Trabaja; buscador de cursos en
   `vialaboris.comunidad.madrid`.
+- **Cita previa**: **imprescindible** para atención presencial en oficinas de
+  empleo (`comunidad.madrid/empleo/cita-previa-oficinas-empleo`).
 - **Demanda**: SEPE (oficina o Sede Electrónica).
-- **Ofertas**: portal de ofertas de empleo de la Comunidad de Madrid; cita
-  previa en oficinas de empleo.
+- **Empleo**: portal de ofertas de la Comunidad de Madrid; inscripción con
+  demanda activa.
 - **Formación**: buscador de cursos (Via Laboris) con preinscripción online;
   selección por requisitos/plazas; app de empleo disponible.
-- **Cita previa**: `comunidad.madrid/empleo/cita-previa-oficinas-empleo`.
 
 ### 11.14 Murcia — SEF (Servicio de Empleo y Formación)
 
 - **Portal**: `sefcarm.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal SEF.
+- **Empleo**: portal SEF.
 - **Formación**: cursos SEF.
-- **Cita previa**: oficinas SEF.
 
 ### 11.15 Navarra — SNE-N (Servicio Navarro de Empleo)
 
 - **Portal**: `navarra.es` (empleo).
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal SNE-N.
+- **Empleo**: portal SNE-N.
 - **Formación**: cursos SNE-N.
-- **Cita previa**: oficinas SNE-N.
 
 ### 11.16 País Vasco — Lanbide
 
 - **Portal**: `lanbide.euskadi.eus`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: Lanbide; inscripción con perfil y demanda.
+- **Empleo**: Lanbide; inscripción con perfil y demanda.
 - **Formación**: cursos Lanbide.
-- **Cita previa**: oficinas Lanbide.
 
 ### 11.17 Valencia — LABORA (Servei Valencià d'Ocupació i Formació)
 
 - **Portal**: `labora.gva.es`.
+- **Cita previa**: **imprescindible** para atención presencial.
 - **Demanda**: SEPE.
-- **Ofertas**: portal LABORA; inscripción con demanda.
+- **Empleo**: portal LABORA; inscripción con demanda.
 - **Formación**: cursos LABORA; inscripción online.
-- **Cita previa**: oficinas LABORA.
 
 ### 11.18 Ceuta y Melilla
 
 - **Gestión estatal** (SEPE). Portal `sepe.es`.
+- **Cita previa**: **imprescindible** para atención presencial en oficinas SEPE.
 - **Demanda, ofertas y formación**: a través del SEPE.
 
 ### 11.19 Notas comunes
