@@ -68,7 +68,35 @@ Si no necesitas Claude Code en concreto, **Google Antigravity es el punto de
 partida recomendado sin coste** para un IDE agéntico completo, y **opencode,
 Goose o Crush** son las opciones de terminal de bajo coste; consulta más abajo.
 
+## Proveedores de modelo (Ollama, OpenRouter, Qwen y similares)
+
+Los runtimes de arriba son los *agentes*. El *modelo* al que llaman es una
+elección aparte, y varios de ellos son gratuitos o se ejecutan enteramente en
+tu propia máquina:
+
+| Proveedor | Tipo | ¿Gratis? | Notas |
+|-----------|------|----------|-------|
+| **Ollama** (local) | Servidor local, API compatible con OpenAI en `http://localhost:11434` | Sí - sin cuenta, sin clave | Ejecuta modelos de pesos abiertos (Llama, Qwen, Mistral, Gemma, Phi, DeepSeek) en tu propio hardware. Mejor para configuraciones sin conexión / a coste cero. Tabla de modelo/RAM en `busqueda_ia_bajosrecursoseconomicos.md`. |
+| **OpenRouter** | Agregador en la nube, API compatible con OpenAI | Freemium - modelos gratuitos disponibles (p. ej. `meta-llama/llama-3.3-70b-instruct:free`, `qwen/qwen3-8b:free`) | Una clave, cientos de modelos. Ideal para probar varios modelos sin cuentas separadas. |
+| **Qwen (DashScope)** | API en la nube | Freemium - cuota gratuita al registrarse | Modelos Qwen alojados de Alibaba. |
+| **Google AI Studio (Gemini)** | API en la nube | Nivel gratuito (con límite de peticiones) | Modelos Gemini; la Gemini CLI lo usa. |
+| **Groq / Cerebras** | API en la nube | Nivel gratuito | Inferencia rápida para modelos de pesos abiertos. |
+| **GitHub Models** | API en la nube | Gratis con cuenta de GitHub | Bueno para CI/experimentación. |
+
+### Apuntar cada runtime a un proveedor gratuito
+
+- **Aider** — `aider --model ollama/qwen2.5:7b` (Ollama) o `aider --model openrouter/meta-llama/llama-3.3-70b-instruct:free`. Define `OLLAMA_API_BASE` u `OPENROUTER_API_KEY` en el entorno. Consulta `aider --list-models`.
+- **Goose** — define el proveedor en `~/.config/goose/config.yaml` (`provider: ollama`, `model: qwen2.5:7b`) o usa el proveedor OpenRouter con `OPENROUTER_API_KEY`.
+- **Qwen Code CLI** — apunta a un modelo local de Ollama con `--model ollama:qwen2.5:7b`, o a DashScope con una clave. El nivel gratuito OAuth terminó el 15 abr 2026.
+- **opencode** — elige el modelo en su TUI; Ollama y OpenRouter son proveedores soportados de serie.
+- **Cline / Kilo Code / Continue** — configura el proveedor como "Ollama" u "OpenRouter" en los ajustes de la extensión y proporciona la URL base / clave.
+- **Claude Code** — requiere una suscripción Claude o créditos de API (sin nivel gratuito). Usa uno de los runtimes anteriores para una configuración a coste cero.
+
+El framework en sí es agnóstico al modelo: las especificaciones canónicas de `.claude/` son Markdown plano, y las CLI de portales son TypeScript puro sin dependencia de LLM. Cualquier modelo que pueda seguir instrucciones y ejecutar comandos (o solo comandos de shell) funciona.
+
 ## Cómo funciona el diseño de punteros finos
+
+
 
 Este repositorio guarda una sola copia de cada especificación y apunta a ella
 desde todos los runtimes. No se duplica nada, así una mejora del proyecto

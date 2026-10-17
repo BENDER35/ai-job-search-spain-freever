@@ -50,7 +50,34 @@ If you do not need Claude Code specifically, **Google Antigravity is the
 recommended no-cost starting point** for a full agentic IDE, and **opencode,
 Goose or Crush** are the low-cost terminal options; see below.
 
+## Model providers (Ollama, OpenRouter, Qwen, and friends)
+
+The runtimes above are the *agents*. The *model* they call is a separate
+choice, and several of them are free or run entirely on your machine:
+
+| Provider | Type | Free? | Notes |
+|----------|------|-------|-------|
+| **Ollama** (local) | Local server, OpenAI-compatible API at `http://localhost:11434` | Yes - no account, no key | Runs open-weight models (Llama, Qwen, Mistral, Gemma, Phi, DeepSeek) on your own hardware. Best for offline / zero-cost setups. Model/RAM table in `busqueda_ia_bajosrecursoseconomicos.md`. |
+| **OpenRouter** | Cloud aggregator, OpenAI-compatible API | Freemium - free models available (e.g. `meta-llama/llama-3.3-70b-instruct:free`, `qwen/qwen3-8b:free`) | One key, hundreds of models. Good for trying several models without separate accounts. |
+| **Qwen (DashScope)** | Cloud API | Freemium - free quota on registration | Alibaba's hosted Qwen models. |
+| **Google AI Studio (Gemini)** | Cloud API | Free tier (rate-limited) | Gemini models; the Gemini CLI uses this. |
+| **Groq / Cerebras** | Cloud API | Free tier | Fast inference for open-weight models. |
+| **GitHub Models** | Cloud API | Free with GitHub account | Good for CI/experimentation. |
+
+### Pointing each runtime at a free provider
+
+- **Aider** — `aider --model ollama/qwen2.5:7b` (Ollama) or `aider --model openrouter/meta-llama/llama-3.3-70b-instruct:free`. Set `OLLAMA_API_BASE` or `OPENROUTER_API_KEY` in the environment. See `aider --list-models`.
+- **Goose** — set the provider in `~/.config/goose/config.yaml` (`provider: ollama`, `model: qwen2.5:7b`) or use the OpenRouter provider with `OPENROUTER_API_KEY`.
+- **Qwen Code CLI** — point at a local Ollama model with `--model ollama:qwen2.5:7b`, or at DashScope with a key. The OAuth free tier ended 15 Apr 2026.
+- **opencode** — pick the model in its TUI; Ollama and OpenRouter are supported providers out of the box.
+- **Cline / Kilo Code / Continue** — set the provider to "Ollama" or "OpenRouter" in the extension settings and supply the base URL / key.
+- **Claude Code** — requires a Claude subscription or API credits (no free tier). Use one of the above runtimes for a zero-cost setup.
+
+The framework itself is model-agnostic: the canonical specs in `.claude/` are plain Markdown, and the portal CLIs are pure TypeScript with no LLM dependency. Any model that can follow instructions and call tools (or just run shell commands) works.
+
 ## How the thin-pointer design works
+
+
 
 This repo keeps one copy of every specification and points every runtime at it.
 Nothing is duplicated, so an upstream improvement reaches every runtime at once.
