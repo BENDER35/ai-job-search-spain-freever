@@ -1,0 +1,150 @@
+#!/usr/bin/env bun
+import { runSearch, type SearchOpts } from "./commands/search.js"
+import { runDetail, type DetailOpts } from "./commands/detail.js"
+
+interface Flags {
+  _: string[]
+  [k: string]: string | boolean | string[]
+}
+
+function parseFlags(argv: string[]): Flags {
+  const flags: Flags = { _: [] }
+  const alias: Record<string, string> = { q: "query", l: "location", n: "limit" }
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i]
+    if (a.startsWith("--") || a.startsWith("-")) {
+      const key = alias[a.replace(/^-+/, "")] ?? a.replace(/^-+/, "")
+      const next = argv[i + 1]
+      if (next === undefined || next.startsWith("-")) {
+        flags[key] = true
+      } else {
+        flags[key] = next
+        i++
+      }
+    } else {
+      ;(flags._ as string[]).push(a)
+    }
+  }
+  return flags
+}
+
+const HELP = `trabajarenlopublico-search — search public-sector job calls on Trabajar en lo público (Spain)
+
+USAGE
+  bun run src/cli.ts search [flags]
+  bun run src/cli.ts detail <id|url> [--format json|plain]
+
+SEARCH FLAGS
+  -q, --query <text>       Client-side keywords over title/employer/sector. Optional.
+  -l, --location <place>   Client-side filter by place or region (e.g. Madrid, Andalucía).
+  --sector <name>          Client-side filter by sector (e.g. policia, sanidad).
+  --remote                 Filter remote offers (client-side heuristic).
+  --page <n>               Page (50 results/page). Default 1.
+  -n, --limit <n>          Cap results.
+  --format <fmt>            json (default) | table | plain.
+
+NOTE
+  The portal publishes no per-posting date, so results are ordered by
+  application deadline (soonest first). There is no --jobage flag.
+`
+
+const KNOWN_FLAGS: Record<string, Set<string>> = {
+  search: new Set([
+    "query",
+    "location",
+    "sector",
+    "remote",
+    "page",
+    "limit",
+    "format",
+    "help",
+    "h",
+  ]),
+  detail: new Set(["format", "help", "h"]),
+}
+
+async function main(): Promise<number> {
+  const argv = process.argv.slice(2)
+  const flags = parseFlags(argv)
+  const cmd = (flags._ as string[])[0]
+
+  if (!cmd || flags.help || flags.h) {
+    process.stdout.write(HELP)
+    return cmd ? 0 : 1
+  }
+
+  const knownFlags = KNOWN_FLAGS[cmd]
+  if (knownFlags) {
+    for (const key of Object.keys(flags)) {
+      if (key === "_" || knownFlags.has(key)) continue
+      process.stderr.write(
+        JSON.stringify({ error: `unknown flag --${key} for '${cmd}'`, code: "UNKNOWN_FLAG" }) + "\n",
+      )
+      return 1
+    }
+  }
+
+  if (cmd === "search") {
+    const fmt = flags.format !== undefined ? String(flags.format) : "json"
+    if (!["json", "table", "plain"].includes(fmt)) {
+      process.stderr.write(
+        JSON.stringify({
+          error: `--format must be one of json|table|plain, got "${fmt}"`,
+          code: "BAD_ARG",
+        }) + "\n",
+      )
+      return 1
+    }
+    const page = flags.page !== undefined ? Number(flags.page) : 1
+    if (flags.page !== undefined && (!Number.isInteger(page) || page < 1)) {
+      process.stderr.write(
+        JSON.stringify({ error: `--page must be an integer >= 1`, code: "BAD_ARG" }) + "\n",
+      )
+      return 1
+    }
+    const limit = flags.limit !== undefined ? Number(flags.limit) : undefined
+    if (limit !== undefined && (isNaN(limit) || limit < 0)) {
+      process.stderr.write(
+        JSON.stringify({ error: `--limit must be a number >= 0`, code: "BAD_ARG" }) + "\n",
+      )
+      return 1
+    }
+    const opts: SearchOpts = {
+      query: typeof flags.query === "string" ? flags.query : undefined,
+      location: typeof flags.location === "string" ? flags.location : undefined,
+      sector: typeof flags.sector === "string" ? flags.sector : undefined,
+      remote: flags.remote !== undefined,
+      page,
+      limit,
+      format: fmt as SearchOpts["format"],
+    }
+    return runSearch(opts)
+  } else if (cmd === "detail") {
+    const id = (flags._ as string[])[1]
+    if (!id) {
+      process.stderr.write(
+        JSON.stringify({ error: "detail requires <id|url>", code: "BAD_ID" }) + "\n",
+      )
+      return 1
+    }
+    const fmt = flags.format !== undefined ? String(flags.format) : "json"
+    if (!["json", "plain"].includes(fmt)) {
+      process.stderr.write(
+        JSON.stringify({
+          error: `--format must be one of json|plain, got "${fmt}"`,
+          code: "BAD_ARG",
+        }) + "\n",
+      )
+      return 1
+    }
+    const opts: DetailOpts = { id, format: fmt as DetailOpts["format"] }
+    return runDetail(opts)
+  } else {
+    process.stderr.write(
+      JSON.stringify({ error: `unknown command '${cmd}'`, code: "UNKNOWN_COMMAND" }) + "\n",
+    )
+    return 1
+  }
+}
+
+main().then((code) => process.exit(code))
