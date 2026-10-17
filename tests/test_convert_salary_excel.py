@@ -369,10 +369,6 @@ class DetectColumnTypeTests(unittest.TestCase):
         self.assertIn("No salary data columns detected", stderr.getvalue())
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class ParseNumericCellLocaleTests(unittest.TestCase):
     # The separator that appears LAST is the decimal separator. Assuming
     # European ("." thousands, "," decimal) for every both-separator string
@@ -500,3 +496,7 @@ class CompoundCategoryPairingTests(unittest.TestCase):
             companies[0]["categories"]["salary_index"],
             {"index": 1234.56},
         )
+
+
+if __name__ == "__main__":
+    unittest.main()
