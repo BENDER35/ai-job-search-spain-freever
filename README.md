@@ -246,6 +246,7 @@ ai-job-search/
 │   ├── serveo-search/                    # Serveo (company careers portal)
 │   ├── trabajarenlopublico-search/       # Trabajar en lo público (Spain public-sector convocatorias)
 │   ├── talent-search/                    # Talent.com (Spain general aggregator)
+│   ├── turijobs-search/                  # Turijobs (Spain tourism & hospitality board)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -397,6 +398,8 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`trabajarenlopublico-search`** — Trabajar en lo público (trabajarenlopublico.com), a community portal aggregating Spain's open public-sector selection processes (convocatorias, oposiciones and bolsas de trabajo) for state, regional and local administration, health, education, police, justice, universities and public companies; parsed from the server-rendered "Convocatorias en plazo" listing. Personal use only: keep volume low. See `.agents/skills/trabajarenlopublico-search/SKILL.md`.
 
 - **`talent-search`** — Talent.com (es.talent.com), the Spanish edition of a global job aggregator indexing postings from thousands of employers and ATS feeds across every sector and all provinces, searchable by keyword, province/city or remote mode; parsed from server-rendered HTML plus the `schema.org` `JobPosting` JSON-LD embedded in detail pages. Personal use only: keep volume low. See `.agents/skills/talent-search/SKILL.md`.
+
+- **`turijobs-search`** — Turijobs (www.turijobs.com), Spain's leading tourism & hospitality job board (hotels, restaurants, catering, travel agencies, campsites, cruises), searchable by job title, area, sector, city or region; parsed from the `__NEXT_DATA__` JSON embedded in every server-rendered Next.js page. Personal use only: keep volume low. See `.agents/skills/turijobs-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
