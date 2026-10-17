@@ -250,7 +250,9 @@ ai-job-search/
 │   ├── jobrapido-search/                 # Jobrapido (Spain job aggregator)
 │   ├── jobijoba-search/                  # Jobijoba (Spain job aggregator)
 │   ├── oficinaempleo-search/             # Oficina Empleo (Spanish job board)
+│   ├── oficinaempleo-search/             # Oficina Empleo (Spanish job board)
 │   ├── studentjob-search/                # StudentJob (jobs for students/young professionals)
+│   ├── michaelpage-search/               # Michael Page (recruitment firm job board)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -407,7 +409,9 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`jobrapido-search`** — Jobrapido (es.jobrapido.com), a large Spanish job aggregator; search by keyword/city, detail from the server-rendered job page. Personal use only: keep volume low; only the first page is reachable (pagination params are disallowed by robots.txt). See `.agents/skills/jobrapido-search/SKILL.md`.
 - **`jobijoba-search`** — Jobijoba (www.jobijoba.es), a large Spanish job aggregator; search by keyword/city/province, detail from the first-party (robots-allowed) offer page with full description. Personal use only: keep volume low; search endpoint disallowed for generic crawlers. See `.agents/skills/jobijoba-search/SKILL.md`.
 - **`oficinaempleo-search`** — Oficina Empleo (www.oficinaempleo.com), a Spanish job board; search by keyword (location filter client-side), detail from the JSON-LD JobPosting page. See `.agents/skills/oficinaempleo-search/SKILL.md`.
+- **`oficinaempleo-search`** — Oficina Empleo (www.oficinaempleo.com), a Spanish job board; search by keyword (location filter client-side), detail from the JSON-LD JobPosting page. See `.agents/skills/oficinaempleo-search/SKILL.md`.
 - **`studentjob-search`** — StudentJob (www.studentjob.es), a job board for students and young professionals (internships, first jobs, part-time and temporary roles) but also regular vacancies; search by keyword, detail with full description, company, location and date. See `.agents/skills/studentjob-search/SKILL.md`.
+- **`michaelpage-search`** — Michael Page (www.michaelpage.es), a recruitment firm's job board; search by keyword, detail from JSON-LD JobPosting with full description, company, location and date. See `.agents/skills/michaelpage-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
