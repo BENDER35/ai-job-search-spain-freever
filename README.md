@@ -256,7 +256,9 @@ ai-job-search/
 │   ├── studentjob-search/                # StudentJob (jobs for students/young professionals)
 │   ├── michaelpage-search/               # Michael Page (recruitment firm job board)
 │   ├── hosco-search/                     # Hosco (hospitality job board)
+│   ├── hosco-search/                     # Hosco (hospitality job board)
 │   ├── randstad-search/                  # Randstad (recruitment firm job board)
+│   ├── primerempleo-search/              # Primerempleo (jobs for students/young professionals)
 │   ├── infojobs-search/               # InfoJobs (Spain, official developer API)
 │   ├── tecnoempleo-search/            # Tecnoempleo (Spain, IT/telecom board)
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -419,7 +421,9 @@ If you prefer doing it by hand, the manual route still works: update the guidanc
 - **`studentjob-search`** — StudentJob (www.studentjob.es), a job board for students and young professionals (internships, first jobs, part-time and temporary roles) but also regular vacancies; search by keyword, detail with full description, company, location and date. See `.agents/skills/studentjob-search/SKILL.md`.
 - **`michaelpage-search`** — Michael Page (www.michaelpage.es), a recruitment firm's job board; search by keyword, detail from JSON-LD JobPosting with full description, company, location and date. See `.agents/skills/michaelpage-search/SKILL.md`.
 - **`hosco-search`** — Hosco (www.hosco.com), a hospitality-focused job board (hotels, restaurants, catering, events, tourism); search by keyword, detail from JSON-LD JobPosting with full description, company, location and date. See `.agents/skills/hosco-search/SKILL.md`.
+- **`hosco-search`** — Hosco (www.hosco.com), a hospitality-focused job board (hotels, restaurants, catering, events, tourism); search by keyword, detail from JSON-LD JobPosting with full description, company, location and date. See `.agents/skills/hosco-search/SKILL.md`.
 - **`randstad-search`** — Randstad (www.randstad.es), a recruitment firm's job board; search by keyword, detail with full description (lenient JSON-LD parsing), company, location and date. See `.agents/skills/randstad-search/SKILL.md`.
+- **`primerempleo-search`** — Primerempleo (www.primerempleo.com), a job board for students and young professionals (internships, first jobs, temporary roles) but also regular vacancies; search by keyword (client-side title filter), detail from JSON-LD JobPosting with full description, company, location and date. Note: detail requires the full URL from search results. See `.agents/skills/primerempleo-search/SKILL.md`.
 - **`linkedin-search`** and **`freehire-search`** — the country-agnostic tools, already useful for Spain (`-l "Madrid, Spain"`, `--country ES`).
 
 The four Danish CLI tools (Jobbank, Jobdanmark, Jobindex, Jobnet) remain as worked examples of the pattern; they ship disabled (`enabled: false`) and stay off in this fork. To add another board for Spain — or any other market — run:
