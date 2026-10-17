@@ -341,6 +341,178 @@ profesionalidad previo (si el curso requiere nivel previo), etc.
 
 ---
 
+## 11. Procedimiento por Comunidad Autónoma
+
+> Cada servicio de empleo autonómico tiene sus propios plazos, formularios y
+> plataformas. La información siguiente es **orientativa**; verifica siempre en
+> el portal oficial de tu CCAA. La **demanda de empleo (DARDE)** se tramita con
+> el SEPE en todas las CCAA, pero la **intermediación, orientación y formación**
+> dependen del servicio autonómico.
+
+### 11.1 Andalucía — SAE (Servicio Andaluz de Empleo)
+
+- **Portal**: `empleo.juntadeandalucia.es` (SAE).
+- **Demanda**: alta/modificación/renovación a través del SEPE (oficina o Sede
+  Electrónica); el SAE ofrece intermediación y orientación en sus centros.
+- **Ofertas**: búsqueda e inscripción en el portal SAE; muchas ofertas
+  requieren demanda activa y perfil completo.
+- **Formación**: cursos del SAE (presenciales/online), certificados de
+  profesionalidad; inscripción en el portal con selección por baremo/orden de
+  inscripción; preasignación automática si cumples requisitos.
+- **Cita previa**: centros SAE / oficinas SEPE.
+
+### 11.2 Aragón — INAEM (Instituto Aragonés de Empleo)
+
+- **Portal**: `inaem.aragon.es`.
+- **Demanda**: SEPE (alta/renovación); INAEM gestiona intermediación y
+  orientación.
+- **Ofertas**: portal INAEM; inscripción con perfil y demanda activa.
+- **Formación**: cursos INAEM; inscripción telemática/presencial; selección
+  por requisitos y plazas.
+- **Cita previa**: oficinas INAEM.
+
+### 11.3 Asturias — SEPEPA
+
+- **Portal**: `empleo.asturias.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal autonómico; inscripción con demanda activa.
+- **Formación**: cursos del Principado; inscripción online; selección por
+  baremo.
+- **Cita previa**: oficinas de empleo.
+
+### 11.4 Baleares — SOIB
+
+- **Portal**: `soib.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: SOIB; inscripción con perfil y demanda.
+- **Formación**: cursos SOIB; inscripción online; preasignación automática.
+- **Cita previa**: oficinas SOIB.
+
+### 11.5 Canarias — SCE (Servicio Canario de Empleo)
+
+- **Portal**: `sce.gobiernodecanarias.org`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal SCE.
+- **Formación**: cursos SCE; inscripción online/presencial.
+- **Cita previa**: oficinas SCE.
+
+### 11.6 Cantabria — EMCAN
+
+- **Portal**: `empleocantabria.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal EMCAN.
+- **Formación**: cursos EMCAN.
+- **Cita previa**: oficinas EMCAN.
+
+### 11.7 Castilla-La Mancha — SEPECAM
+
+- **Portal**: `empleo.jccm.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal SEPECAM.
+- **Formación**: cursos SEPECAM; inscripción online.
+- **Cita previa**: oficinas SEPECAM.
+
+### 11.8 Castilla y León — ECYL
+
+- **Portal**: `empleo.jcyl.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal ECYL; inscripción con demanda activa.
+- **Formación**: cursos ECYL; inscripción online; selección por requisitos.
+- **Cita previa**: oficinas ECYL.
+
+### 11.9 Cataluña — SOC (Servei d'Ocupació de Catalunya)
+
+- **Portal**: `soc.gencat.cat`.
+- **Demanda**: SEPE (oficina o telemática).
+- **Ofertas**: portal SOC; inscripción con perfil y demanda.
+- **Formación**: cursos SOC; inscripción online; selección por baremo/orden.
+- **Cita previa**: oficinas SOC.
+
+### 11.10 Extremadura — SEXPE
+
+- **Portal**: `extremaduratrabaja.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal SEXPE.
+- **Formación**: cursos SEXPE.
+- **Cita previa**: oficinas SEXPE.
+
+### 11.11 Galicia — Xunta (Consellería de Promoción do Emprego)
+
+- **Portal**: `emprego.xunta.gal`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal autonómico; inscripción con demanda.
+- **Formación**: cursos autonómicos; inscripción online.
+- **Cita previa**: oficinas de empleo.
+
+### 11.12 La Rioja
+
+- **Portal**: `empleo.larioja.org`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal autonómico.
+- **Formación**: cursos autonómicos.
+- **Cita previa**: oficinas SEPE.
+
+### 11.13 Madrid — Servicio Regional de Empleo
+
+- **Portal**: `empleo.madrid.org` / Madrid Trabaja; buscador de cursos en
+  `vialaboris.comunidad.madrid`.
+- **Demanda**: SEPE (oficina o Sede Electrónica).
+- **Ofertas**: portal de ofertas de empleo de la Comunidad de Madrid; cita
+  previa en oficinas de empleo.
+- **Formación**: buscador de cursos (Via Laboris) con preinscripción online;
+  selección por requisitos/plazas; app de empleo disponible.
+- **Cita previa**: `comunidad.madrid/empleo/cita-previa-oficinas-empleo`.
+
+### 11.14 Murcia — SEF (Servicio de Empleo y Formación)
+
+- **Portal**: `sefcarm.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal SEF.
+- **Formación**: cursos SEF.
+- **Cita previa**: oficinas SEF.
+
+### 11.15 Navarra — SNE-N (Servicio Navarro de Empleo)
+
+- **Portal**: `navarra.es` (empleo).
+- **Demanda**: SEPE.
+- **Ofertas**: portal SNE-N.
+- **Formación**: cursos SNE-N.
+- **Cita previa**: oficinas SNE-N.
+
+### 11.16 País Vasco — Lanbide
+
+- **Portal**: `lanbide.euskadi.eus`.
+- **Demanda**: SEPE.
+- **Ofertas**: Lanbide; inscripción con perfil y demanda.
+- **Formación**: cursos Lanbide.
+- **Cita previa**: oficinas Lanbide.
+
+### 11.17 Valencia — LABORA (Servei Valencià d'Ocupació i Formació)
+
+- **Portal**: `labora.gva.es`.
+- **Demanda**: SEPE.
+- **Ofertas**: portal LABORA; inscripción con demanda.
+- **Formación**: cursos LABORA; inscripción online.
+- **Cita previa**: oficinas LABORA.
+
+### 11.18 Ceuta y Melilla
+
+- **Gestión estatal** (SEPE). Portal `sepe.es`.
+- **Demanda, ofertas y formación**: a través del SEPE.
+
+### 11.19 Notas comunes
+
+- La **alta/modificación/renovación de la demanda** se tramita con el SEPE en
+  todas las CCAA (oficina o Sede Electrónica).
+- La **intermediación, orientación y formación** dependen del servicio
+  autonómico.
+- Los **plazos de renovación** (generalmente cada 3 meses) y los sistemas de
+  **selección de cursos** (automática/baremo/orden de inscripción) varían por
+  CCAA.
+- Consulta siempre el portal oficial de tu CCAA para procedimientos actualizados.
+
+---
+
 ## 10. Enlaces oficiales de referencia
 
 - **SEPE**: https://www.sepe.es
