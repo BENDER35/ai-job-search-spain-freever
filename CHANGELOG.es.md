@@ -15,6 +15,19 @@ comandos de diff por archivo.
 
 > **Nota sobre la traducción:** las notas de versiones anteriores a la 1.7.1 se mantienen en inglés en [CHANGELOG.md](CHANGELOG.md).
 
+## [1.8.20-es] - 2026-10-17 (fork español)
+
+### Añadido
+
+- **8 nuevas skills de portales españoles**: `jobrapido-search` (Jobrapido, agregador español), `jobijoba-search` (Jobijoba, agregador con páginas de detalle propias), `oficinaempleo-search` (Oficina Empleo, portal español), `studentjob-search` (StudentJob, empleo para estudiantes/jóvenes), `michaelpage-search` (Michael Page, consultora de selección), `hosco-search` (Hosco, hostelería), `randstad-search` (Randstad, consultora de selección), `primerempleo-search` (Primerempleo, empleo para estudiantes/jóvenes). Total: 33 skills de portales.
+
+- **`esenciales/oficinas_empleo_sp.md`** — guía completa de las oficinas de empleo de España: servicios del SEPE, demanda de empleo (alta/modificación/renovación), prestaciones y subsidios, portales de empleo autonómicos, cómo apuntarse a ofertas, formación y cursos con selección automática, y procedimientos paso a paso por comunidad (19 CCAA).
+
+### Cambiado
+
+- README.md y README.es.md actualizados con la lista completa de portales y entradas deduplicadas en la estructura de archivos.
+- AGENTS.md, `.claude/settings.json`, `tools/security_guards.py` actualizados con los nuevos registros de portales.
+
 ## [1.8.0-es] - 2026-10-16
 
 ### Added

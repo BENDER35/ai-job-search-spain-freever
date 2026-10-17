@@ -11,6 +11,19 @@ prefer updating to a tagged release over pulling raw `master` (see
 files a release touched; `python3 tools/check_upstream_updates.py` lists them with
 per-file diff commands.
 
+## [1.8.20-es] - 2026-10-17 (Spain fork)
+
+### Added
+
+- **8 new Spanish portal search skills**: `jobrapido-search` (Jobrapido, large Spanish aggregator), `jobijoba-search` (Jobijoba, Spanish aggregator with first-party detail pages), `oficinaempleo-search` (Oficina Empleo, Spanish job board), `studentjob-search` (StudentJob, jobs for students/young professionals), `michaelpage-search` (Michael Page, recruitment firm), `hosco-search` (Hosco, hospitality-focused), `randstad-search` (Randstad, recruitment firm), `primerempleo-search` (Primerempleo, jobs for students/young professionals). Total: 33 portal skills.
+
+- **`esenciales/oficinas_empleo_sp.md`** — comprehensive guide to Spanish employment offices: SEPE services, demanda de empleo (alta/modificación/renovación), prestaciones y subsidios, autonomous community job portals, how to apply to offers, training/courses with automatic course selection, and step-by-step procedures per community (19 CCAA).
+
+### Changed
+
+- README.md and README.es.md updated with the full portal list and deduplicated file-structure entries.
+- AGENTS.md, `.claude/settings.json`, `tools/security_guards.py` updated with new portal registrations.
+
 ## [1.8.0-es] - 2026-10-16
 
 ### Added
